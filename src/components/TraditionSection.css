@@ -1,0 +1,215 @@
+/* ============================================
+   TRADITION SECTION
+   ============================================ */
+
+.tradition {
+  background-color: var(--color-cream);
+  padding: var(--space-20) 0;
+  overflow: hidden;
+}
+
+.tradition__inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 clamp(var(--space-8), 8vw, 100px);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: var(--space-16);
+}
+
+/* ── Left Image Column ── */
+.tradition__image-col {
+  position: relative;
+}
+
+.tradition__image-wrapper {
+  border-radius: 16px;
+  overflow: hidden;
+  aspect-ratio: 4 / 5;
+  background-color: var(--color-cream-dark);
+}
+
+.tradition__image-wrapper--fallback {
+  background: linear-gradient(135deg, #e8d5c4 0%, #c4a882 100%);
+}
+
+.tradition__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+/* ── Floating Card ── */
+.tradition__card {
+  position: absolute;
+  bottom: -28px;
+  right: -28px;
+  background-color: var(--color-white);
+  border-radius: 14px;
+  padding: var(--space-5) var(--space-6);
+  box-shadow: 0 8px 32px rgba(123, 27, 46, 0.12);
+  max-width: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.tradition__card-icon {
+  width: 32px;
+  height: 32px;
+  color: var(--color-maroon);
+}
+
+.tradition__card-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.tradition__card-text {
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: var(--color-text-dark);
+  line-height: 1.4;
+}
+
+.tradition__card-text em {
+  font-style: italic;
+  color: var(--color-maroon-light);
+}
+
+/* ── Right Content ── */
+.tradition__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+/* Label */
+.tradition__label {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-amber);
+}
+
+.tradition__label-line {
+  display: inline-block;
+  width: 28px;
+  height: 1.5px;
+  background-color: var(--color-amber);
+  border-radius: var(--radius-full);
+  flex-shrink: 0;
+}
+
+/* Heading */
+.tradition__heading {
+  font-family: var(--font-serif);
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  font-weight: 700;
+  color: var(--color-text-dark);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+/* Body text */
+.tradition__text {
+  font-family: var(--font-sans);
+  font-size: clamp(0.875rem, 1.4vw, 1rem);
+  color: var(--color-text-mid);
+  line-height: 1.75;
+}
+
+/* Link */
+.tradition__link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-maroon);
+  margin-top: var(--space-2);
+  transition: gap var(--transition), color var(--transition);
+}
+
+.tradition__link svg {
+  width: 16px;
+  height: 16px;
+  transition: transform var(--transition);
+}
+
+.tradition__link:hover {
+  color: var(--color-maroon-dark);
+  gap: var(--space-3);
+}
+
+.tradition__link:hover svg {
+  transform: translateX(3px);
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .tradition__inner {
+    grid-template-columns: 1fr;
+    gap: var(--space-12);
+  }
+
+  .tradition__image-wrapper {
+    aspect-ratio: 4 / 3;
+    max-width: 480px;
+  }
+
+  .tradition__card {
+    right: -8px;
+    bottom: -20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .tradition {
+    padding: var(--space-12) 0;
+  }
+
+  .tradition__inner {
+    padding: 0;
+  }
+
+  .tradition__image-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .tradition__image-wrapper {
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 18px;
+  }
+
+  .tradition__image {
+    object-fit: cover;
+    object-position: center 34%;
+    transform: scale(1.18);
+  }
+
+  .tradition__content {
+    padding: 0 var(--space-4);
+  }
+
+  .tradition__card {
+    position: static;
+    margin-top: var(--space-4);
+    flex-direction: row;
+    align-items: center;
+    max-width: 100%;
+  }
+}
